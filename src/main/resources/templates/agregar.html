@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet"
+	th:href="@{/css/jquery-ui.min.css}" />
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form th:action="@{/agregar}" th:object="${cliente}" method="post">
+  <div class="form-group">
+    <label for="exampleInputPassword1">Nombre</label>
+    <input th:field="*{nombre}" type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre">
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Apellido</label>
+    <input th:field="*{apellido}" type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">DNI</label>
+    <input th:field="*{dni}" type="text" class="form-control" id="exampleInputPassword1" placeholder="DNI">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+	
+	
+</body>
+</html>
