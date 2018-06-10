@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet"
+	th:href="@{/css/jquery-ui.min.css}" />
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="conteiner">
+		<div class="card-header">
+			<div th:text="${titulo}"></div>
+		</div>
+		
+<form th:action="@{/agregarcuenta}" th:object="${cuenta}" method="post">
+
+
+   <div class="form-group">
+				    <label for="exampleFormControlSelect1">Banco</label>
+				    <select th:field="*{banco}" class="form-control" id="">
+				      <option value ="BCP">BCP</option>
+				      <option value ="BBVA">BBVA</option>
+				      <option value ="Sctoiabank">Sctoiabank</option>
+				      <option value ="Interbank">Interbank</option>
+				      <option value ="BanBif">BanBif</option>
+				     </select>
+	</div>
+
+    <div class="form-group">
+    <label for="exampleInputPassword1">Nro Cuenta</label>
+    <input th:field="*{numCta}" type="text" class="form-control" id="exampleInputPassword1" placeholder="Cuenta">
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Saldo</label>
+    <input th:field="*{saldo}" type="text" class="form-control" id="exampleInputPassword1" placeholder="Saldo">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</body>
+</html>

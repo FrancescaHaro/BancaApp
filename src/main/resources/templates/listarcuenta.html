@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet"
+	th:href="@{/css/jquery-ui.min.css}" />
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="conteiner">
+		<div class="card-header">
+			<div th:text="${titulo}"></div>
+		</div>
+		
+		<div class="card-body">
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">id</th>
+			      <th scope="col">Banco</th>
+			      <th scope="col">Nro Cuenta</th>
+			      <th scope="col">Saldo</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="cuenta: ${cuentas}">
+			      <td th:text="${cuenta.id}"></td>
+			      <td th:text="${cuenta.banco}"></td>
+			      <td th:text="${cuenta.numCta}"></td>
+			      <td th:text="${cuenta.saldo}"></td>
+			    </tr>
+			  </tbody>
+			</table>
+			
+			<div class="row container">
+				<div class="col">
+				<a th:href= "@{'/agregarcuenta/' + ${cuenta.cliente.id}}"class="btn btn-primary" role="button">Agregar</a>
+					
+			</div>
+				<div clas="col">
+					<a th:href= "@{/listar}"class="btn btn-primary" role="button">Volver</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

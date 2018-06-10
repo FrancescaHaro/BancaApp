@@ -41,7 +41,7 @@ public class ClienteController {
 	public String agregar(Model model) {
 		
 		Cliente cliente=new Cliente();
-		model.addAttribute("titulo", "Agregar");
+		model.addAttribute("titulo", "Agregar Cliente");
 		model.addAttribute("cliente", cliente);
 		
 		return "agregar";

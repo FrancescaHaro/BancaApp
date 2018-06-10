@@ -22,6 +22,8 @@
 			      <th scope="col">Nombre</th>
 			      <th scope="col">Apellido</th>
 			      <th scope="col">DNI</th>
+			      <th scope="col">Cuenta</th>
+			      <th scope="col">Movimiento</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -30,12 +32,13 @@
 			      <td th:text="${cliente.nombre}"></td>
 			      <td th:text="${cliente.apellido}"></td>
 			      <td th:text="${cliente.dni}"></td>
+			      <td><a th:href="@{/listarcuenta/} + ${cliente.id}">Detalle</a></td>
+			      <td><a th:href="@{/listarmovimiento/} + ${cliente.id}">Detalle</a></td>
 			    </tr>
 			  </tbody>
 			</table>
 			<a th:href= "@{/agregar}"class="btn btn-primary" role="button">Agregar</a>
 		</div>
 	</div>
-</body>
 </body>
 </html>

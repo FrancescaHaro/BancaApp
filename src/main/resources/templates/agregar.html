@@ -9,7 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div class="conteiner">
+		<div class="card-header">
+			<div th:text="${titulo}"></div>
+		</div>
 <form th:action="@{/agregar}" th:object="${cliente}" method="post">
   <div class="form-group">
     <label for="exampleInputPassword1">Nombre</label>
@@ -26,6 +29,6 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 	
-	
+</div>	
 </body>
 </html>
