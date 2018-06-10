@@ -36,9 +36,9 @@ public class MovimientoService implements IMovimientoService{
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Movimiento> listMovimientoByCliente(Long id) {
+	public List<Movimiento> listMovimientoByCuenta(Long id) {
 		// TODO Auto-generated method stub
-		return movimientoDao.listMovimientoByCliente(id);
+		return movimientoDao.listMovimientoByCuenta(id);
 	}
 
 }

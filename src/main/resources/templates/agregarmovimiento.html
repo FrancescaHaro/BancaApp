@@ -18,7 +18,8 @@
 		<div class="card-body">
 		
 				
-				<form th:action="@{/agregarmovimiento}" th:object="${movimiento}" method="post">
+				<form th:action="@{'/agregarmovimiento/' + ${idcuenta}}" th:object="${movimiento}" method="post">
+				<input type="hidden" th:field="*{cuenta}" th:value="${idcuenta}">
 				  
 				  <div class="form-group">
 				    <label for="exampleFormControlSelect1">Tipo Movimiento </label>

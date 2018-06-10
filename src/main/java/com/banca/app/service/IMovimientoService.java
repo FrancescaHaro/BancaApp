@@ -11,5 +11,5 @@ public interface IMovimientoService {
 
 	public Movimiento findById(Long id);
 	
-	public List<Movimiento> listMovimientoByCliente(Long id);
+	public List<Movimiento> listMovimientoByCuenta(Long id);
 }

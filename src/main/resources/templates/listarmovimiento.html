@@ -36,11 +36,11 @@
 			
 			<div class="row container">
 				<div class="col">
-				<a th:href= "@{'/agregarmovimiento/' + ${movimiento.cuenta.id}}"class="btn btn-primary" role="button">Agregar</a>
+				<a th:href= "@{'/agregarmovimiento/' + ${idcuenta}}"class="btn btn-primary" role="button">Agregar</a>
 					
 			</div>
 			<div class="col">
-					<a th:href="@{'/listarcuenta/' + ${movimiento.cuenta.cliente.id}}"  class="btn btn-primary" role="button">Volver</a>
+					<a th:href="@{'/listarcuenta/' + ${idcliente}}"  class="btn btn-primary" role="button">Volver</a>
 			</div>
 			</div>
 		</div>

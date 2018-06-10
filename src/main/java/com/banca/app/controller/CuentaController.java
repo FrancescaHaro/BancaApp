@@ -30,18 +30,21 @@ public class CuentaController {
 	private IClienteService clienteService;
 
 	
-	@GetMapping(value="listarcuenta/{clienteId}")
+	@GetMapping(value="/listarcuenta/{clienteId}")
 	public String listar(Model model,@PathVariable(value = "clienteId") Long clienteId) {
 		
 		
+		Cliente cliente = clienteService.findById(clienteId);
 		model.addAttribute("titulo", "Listar Cuentas");
 		model.addAttribute("cuentas", cuentaService.listCuentaByCliente(clienteId));
+		model.addAttribute("idcliente", clienteId);
+		model.addAttribute("nombre", cliente.getNombre()+ " " +cliente.getApellido());
 		
 		return "listarcuenta" ;
 		
 	}
 
-	@GetMapping(value="agregarcuenta/{clienteId}")
+	@GetMapping(value="/agregarcuenta/{clienteId}")
 	public String agregar(@PathVariable(value = "clienteId") Long clienteId, Model model) {
 		
 		Cliente cliente = clienteService.findById(clienteId);

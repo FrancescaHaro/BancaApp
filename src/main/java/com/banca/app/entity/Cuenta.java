@@ -14,6 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 @Table(name="cuenta")
 public class Cuenta implements Serializable {
@@ -36,7 +39,9 @@ public class Cuenta implements Serializable {
 	@ManyToOne(fetch=FetchType.LAZY)
 	private Cliente cliente;
 	
+	
 	@OneToMany(mappedBy="cuenta", fetch=FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
+	@Fetch(value = FetchMode.SUBSELECT)
 	private List<Movimiento> movimientos;
 
 	public Long getId() {

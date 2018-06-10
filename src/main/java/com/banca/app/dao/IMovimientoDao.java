@@ -11,7 +11,7 @@ import com.banca.app.entity.Movimiento;
 @Repository
 public interface IMovimientoDao extends JpaRepository<Movimiento, Long> {
 	
-	@Query("select m from Movimiento m join fetch m.cuenta c join fetch c.cliente cl where cl.id=?1")
-	public List<Movimiento> listMovimientoByCliente(Long id);
+	@Query("select m from Movimiento m join fetch m.cuenta c where c.id=?1")
+	public List<Movimiento> listMovimientoByCuenta(Long id);
 
 }

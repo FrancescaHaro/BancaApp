@@ -13,7 +13,7 @@
 		<div class="card-header">
 			<div th:text="${titulo}"></div>
 		</div>
-		
+		<h4 th:text=${nombre}></h4>
 		<div class="card-body">
 			<table class="table">
 			  <thead>
@@ -31,14 +31,14 @@
 			      <td th:text="${cuenta.banco}"></td>
 			      <td th:text="${cuenta.numCta}"></td>
 			      <td th:text="${cuenta.saldo}"></td>
-			      <td><a th:href="@{/agregarmovimiento/} + ${cuenta.id}">Detalle</a></td>
+			      <td><a th:href="@{/listarmovimiento/} + ${cuenta.id}">Detalle</a></td>
 			    </tr>
 			  </tbody>
 			</table>
 			
 			<div class="row container">
 				<div class="col">
-				<a th:href= "@{'/agregarcuenta/' + ${cuenta.cliente.id}}"class="btn btn-primary" role="button">Agregar</a>
+				<a th:href= "@{'/agregarcuenta/' + ${idcliente}}"class="btn btn-primary" role="button">Agregar</a>
 					
 			</div>
 			<div class="col">
