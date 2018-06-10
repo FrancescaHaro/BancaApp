@@ -35,7 +35,6 @@ public class Movimiento implements Serializable {
 	private double monto;
 
 	@Temporal(TemporalType.DATE)
-	@NotNull
 	private Date fecha;
 	
 	@ManyToOne(fetch=FetchType.LAZY)

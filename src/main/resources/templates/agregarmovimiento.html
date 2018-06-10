@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th = "http:/www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet"
+	th:href="@{/css/jquery-ui.min.css}" />
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class ="container"> 
+		
+		<div class = "card-header">
+			<div th:text="${titulo}"></div>
+		</div>
+		<div class="card-body">
+		
+				
+				<form th:action="@{/agregarmovimiento}" th:object="${movimiento}" method="post">
+				  
+				  <div class="form-group">
+				    <label for="exampleFormControlSelect1">Tipo Movimiento </label>
+				    <select th:field="*{tipo}" class="form-control" id="">
+				      <option value ="Deposito">Deposito</option>
+				      <option value ="Retiro">Retiro</option>
+				     </select>
+				  </div>
+				  
+				  <div class="form-group">
+				    <label for="formGroupExampleInput">Monto</label>
+				    <input th:field="*{monto}" type="text" class="form-control" id="" placeholder="Ingresar Monto">
+				  </div>
+				  
+				
+				    
+				   
+				  <button type="submit" class="btn btn-primary">Agregar</button>
+				  
+				</form>
+			
+		
+		</div>
+	
+	</div>
+</body>
+</html>

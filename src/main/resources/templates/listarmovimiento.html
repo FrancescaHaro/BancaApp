@@ -19,30 +19,28 @@
 			  <thead>
 			    <tr>
 			      <th scope="col">id</th>
-			      <th scope="col">Banco</th>
-			      <th scope="col">Nro Cuenta</th>
-			      <th scope="col">Saldo</th>
-			      <th scope="col">Movimientos</th>
+			      <th scope="col">tipo</th>
+			      <th scope="col">Monto</th>
+			      <th scope="col">Fecha</th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr th:each="cuenta: ${cuentas}">
-			      <td th:text="${cuenta.id}"></td>
-			      <td th:text="${cuenta.banco}"></td>
-			      <td th:text="${cuenta.numCta}"></td>
-			      <td th:text="${cuenta.saldo}"></td>
-			      <td><a th:href="@{/agregarmovimiento/} + ${cuenta.id}">Detalle</a></td>
+			    <tr th:each="movimiento: ${movimientos}">
+			      <td th:text="${movimiento.id}"></td>
+			      <td th:text="${movimiento.tipo}"></td>
+			      <td th:text="${movimiento.monto}"></td>
+			      <td th:text="${movimiento.fecha}"></td>
 			    </tr>
 			  </tbody>
 			</table>
 			
 			<div class="row container">
 				<div class="col">
-				<a th:href= "@{'/agregarcuenta/' + ${cuenta.cliente.id}}"class="btn btn-primary" role="button">Agregar</a>
+				<a th:href= "@{'/agregarmovimiento/' + ${movimiento.cuenta.id}}"class="btn btn-primary" role="button">Agregar</a>
 					
 			</div>
 			<div class="col">
-					<a th:href= "@{/listar}"class="btn btn-primary" role="button">Volver</a>
+					<a th:href="@{'/listarcuenta/' + ${movimiento.cuenta.cliente.id}}"  class="btn btn-primary" role="button">Volver</a>
 			</div>
 			</div>
 		</div>
