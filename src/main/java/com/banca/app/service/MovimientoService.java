@@ -24,9 +24,24 @@ public class MovimientoService implements IMovimientoService{
 	@Override
 	@Transactional
 	public void save(Movimiento movimiento) {
+		this.actualizarSaldo(movimiento);
 		movimientoDao.save(movimiento);
-		
 	}
+	
+	private void actualizarSaldo(Movimiento movimiento) {
+		if(movimiento.getTipo().equalsIgnoreCase("Retiro")) {
+			double monto = movimiento.getMonto();
+			double saldoAnterior = movimiento.getCuenta().getSaldo();
+			movimiento.getCuenta().setSaldo(saldoAnterior - monto);
+		}else {
+			if(movimiento.getTipo().equalsIgnoreCase("Deposito")) {
+				double monto = movimiento.getMonto();
+				double saldoAnterior = movimiento.getCuenta().getSaldo();
+				movimiento.getCuenta().setSaldo(saldoAnterior + monto);
+			}
+		}
+	}
+	
 
 	@Override
 	@Transactional(readOnly = true)
