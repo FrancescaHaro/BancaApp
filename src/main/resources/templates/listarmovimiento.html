@@ -9,11 +9,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="conteiner">
+<div class="container">
 		<div class="card-header">
 			<div th:text="${titulo}"></div>
 		</div>
-		
+		<div class="card border-warning mb-3">
+						<div class="card-body text-warning">
+						
+						
+							<div class="form-group">
+						    	<label for="exampleInputPassword1">Cliente</label>
+						    	<input th:value="${cliente} " type="text" class="form-control" disabled='disabled'>
+						 	</div>
+						 	
+							<div class="form-group">
+						    	<label for="exampleInputPassword1">Cuenta</label>
+						    	<input th:value="${ncuenta} " type="text" class="form-control" disabled='disabled'>
+						 	</div>
+						 	
+						 	<div class="form-group">
+						    	<label for="exampleInputPassword1">Banco</label>
+						    	<input th:value="${banco} " type="text" class="form-control" disabled='disabled'>
+						 	</div>
+						 	
+						 </div>
+						
+						
+					</div>
 		<div class="card-body">
 		
 			<div th:if="${advertencia}">
